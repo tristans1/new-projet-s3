@@ -17,10 +17,12 @@ export default {
   components: {
     TheNavHome, 
     HomeConnect
+  },
+  beforeCreate: function () {
+    document.body.style.overflow = "hidden";
   }
 }
 </script>
 
-<style  scoped>
-
+<style lang="scss">
 </style>

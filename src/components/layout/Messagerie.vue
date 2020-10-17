@@ -1,9 +1,10 @@
 <template>
 <!-- <div class="messagerie-open">-->
-<div class="messagerie bg-white d-none d-md-block ">
-    <header class="bg-secondary d-flex">
+  <div id="messagerie" v-bind:class="[volet ? 'open-volet' : 'close-volet']">
+    <div class=" bg-white d-none d-md-block " >
+    <header class="bg-secondary d-flex" v-on:click="flipOpen">
         <h5 class="pl-2">Messagerie</h5>
-        <img class="ml-auto mr-3 arrow-toggle" src="../svg/arrow-toggle.svg" alt="arrow">
+        <img id="icon" class="ml-auto mr-3 arrow-toggle" src="../svg/arrow-toggle.svg" alt="arrow">
 
     </header>
     
@@ -11,24 +12,25 @@
                 <div class="photo"> <img src="../svg/user-pp.svg" alt="user">    </div>
                 <div class="informations">
                 <h6 class="font-weight-bold">Quentin Robelin</h6>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
+                <p class="message-perso">Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
                 </div>
             </div>
             <div class="contact d-flex pl-1 pr-1">
                 <div class="photo"> <img src="../svg/user-pp.svg" alt="user">    </div>
                 <div class="informations">
                 <h6 class="font-weight-bold">Sergio Gomez</h6>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
+                <p class="message-perso">Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
                 </div>
             </div>
             <div class="contact d-flex pl-1 pr-1">
                 <div class="photo"> <img src="../svg/user-dev-pp.svg" alt="user">    </div>
                 <div class="informations">
                 <h6 class="font-weight-bold">Adrien Bouteiller</h6>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
+                <p class="message-perso">Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
                 </div>
             </div>
-        </div>  
+        </div>
+  </div>
     <!--</div>-->
 </template>
 
@@ -37,26 +39,33 @@ export default {
   name: 'Messagerie',
   props: {
     msg: String
+  },
+  data() {
+    return{
+      volet: false
+
+    }
+  },
+  methods: {
+    flipOpen: function () {
+      this.volet = !this.volet;
+    },
+
   }
 }
-//methods:{
-//    doToggle : function() {
- //       page.classList.toggle('messagerie-open');
-//    }
-//}
+
 
 </script>
 
 
 
 <style  scoped>
-.messagerie{
-    width: 500px;
+#messagerie{
+    width: 400px;
     height: auto;
     position: absolute;
     bottom: 0;
-    right: 8%;
-
+    right: 0;
 }
 .photo{
     flex-basis: 10%;
@@ -76,6 +85,10 @@ img{
     padding:  2% 1% 1% 1%;
     margin:  0 1%;
 }
+header{
+  padding-top:5px;
+  padding-bottom:5px ;
+}
 h5{
     margin: 0;
     padding: 1%;
@@ -84,11 +97,31 @@ h5{
 h6{
     margin-bottom: 1%;
 }
-p{
-    margin-bottom: 1%;
+.message-perso{
+  margin-bottom: 1%;
+  font-size: 0.75rem;
 }
 .arrow-toggle{
     width: 5%;
+}
+.open-volet{
+  bottom:0;
+  transition: all 0.5s ease;
+}
+
+.close-volet{
+  bottom:-170px !important;
+  transition: all 0.5s ease;
+}
+
+.open-volet #icon{
+  transform: rotate(180deg);
+  transition: all 0.3s ease;
+}
+
+.close-volet #icon {
+  transition: all 0.3s ease;
+
 }
 
 

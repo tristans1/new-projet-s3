@@ -16,8 +16,6 @@
                 <div>
                      <router-link to="/map"><button class="btn bg-muted m-3 ">Continuer sans se connecter</button></router-link>
                 </div>
-            
-                
             </div>
         </div>
     </div>
@@ -38,7 +36,7 @@ export default {
   }
 }
 </script>
-<style scoped>
+<style lang="scss" scoped>
 div.background{
     background: url("../assets/home_connect.png") 50% 50%;
     background-size: cover;

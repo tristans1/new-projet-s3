@@ -1,4 +1,4 @@
-<template>
+  <template>
     <div>
   <b-navbar type="dark" variant="primary">
     <b-navbar-brand href="#"><img id="logo" src="../svg/logo_svg_alummi_blanc.svg" alt="logo"></b-navbar-brand>
