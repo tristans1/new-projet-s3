@@ -18,11 +18,24 @@ export default {
 
 <style scoped>
 #logo{
-  width: 40%;
-  max-width: 40%;
+  width: 80%;
+  max-width: 80%;
 }
 div{
   position: sticky;
   top: 0;
+}
+
+.navbar-brand {
+  width: 120px;
+}
+/*SM navbar responsive*/
+@media (max-width: 576px) {
+  .navbar-brand{
+    width: 100%;
+  }
+  #logo{
+    width: 22%;
+  }
 }
 </style>
