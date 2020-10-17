@@ -2,7 +2,8 @@
 <div class="background">
     <div class="container">
         <div class="row">
-            <div id="contain" class="col-10 offset-1 col-md-6 offset-md-3 col-lg-4 offset-lg-4 bg-white pb-3 pt-3"> <!-- w-sm-75 m-auto  w-md-25-->
+          <div class="d-block d-lg-flex">
+            <div id="contain" class="col-10 offset-1 col-md-6 offset-md-3 col-lg-4 offset-lg-3 bg-white pb-3 pt-3"> <!-- w-sm-75 m-auto  w-md-25-->
                 
                 <div > <!-- class="col-12"-->
                         <router-link to="/map"> <button class="btn m-3 text-white bg-primary"> <!--<img class="img-fluid" src="../assets/svg/linkedin.svg" alt="linkedin">--> Se connecter via Linkedin</button></router-link>
@@ -17,6 +18,7 @@
                      <router-link to="/map"><button class="btn bg-muted m-3 ">Continuer sans se connecter</button></router-link>
                 </div>
             </div>
+          <h1 class="col-10 col-lg-6 text-left ">Gardez un  <span>lien</span>  avec <br class="d-none d-lg-block"> les anciens </h1></div>
         </div>
     </div>
 
@@ -38,7 +40,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 div.background{
-    background: url("../assets/home_connect.png") 50% 50%;
+    background: url("../assets/home_connect_1.png") 50% 50%;
     background-size: cover;
     width: 100%;
     height: 100vh;
@@ -59,6 +61,8 @@ img{
     fill: white;
     width: 20px;
 }
-
+span{
+  text-decoration: underline white;
+}
 
 </style>
