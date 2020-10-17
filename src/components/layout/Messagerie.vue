@@ -1,9 +1,10 @@
 <template>
 <!-- <div class="messagerie-open">-->
-<div class="messagerie bg-white d-none d-md-block ">
-    <header class="bg-secondary d-flex">
+  <div id="messagerie" v-bind:class="[volet ? 'open-volet' : 'close-volet']">
+    <div class=" bg-white d-none d-md-block " >
+    <header class="bg-secondary d-flex" v-on:click="flipOpen">
         <h5 class="pl-2">Messagerie</h5>
-        <img class="ml-auto mr-3 arrow-toggle" src="../svg/arrow-toggle.svg" alt="arrow">
+        <img id="icon" class="ml-auto mr-3 arrow-toggle" src="../svg/arrow-toggle.svg" alt="arrow">
 
     </header>
     
@@ -28,7 +29,8 @@
                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
                 </div>
             </div>
-        </div>  
+        </div>
+  </div>
     <!--</div>-->
 </template>
 
@@ -37,26 +39,33 @@ export default {
   name: 'Messagerie',
   props: {
     msg: String
+  },
+  data() {
+    return{
+      volet: false
+
+    }
+  },
+  methods: {
+    flipOpen: function () {
+      this.volet = !this.volet;
+    },
+
   }
 }
-//methods:{
-//    doToggle : function() {
- //       page.classList.toggle('messagerie-open');
-//    }
-//}
+
 
 </script>
 
 
 
 <style  scoped>
-.messagerie{
+#messagerie{
     width: 500px;
     height: auto;
     position: absolute;
     bottom: 0;
     right: 8%;
-
 }
 .photo{
     flex-basis: 10%;
@@ -89,6 +98,25 @@ p{
 }
 .arrow-toggle{
     width: 5%;
+}
+.open-volet{
+  bottom:0;
+  transition: all 0.5s ease;
+}
+
+.close-volet{
+  bottom:-200px !important;
+  transition: all 0.5s ease;
+}
+
+.open-volet #icon{
+  transform: rotate(180deg);
+  transition: all 0.3s ease;
+}
+
+.close-volet #icon {
+  transition: all 0.3s ease;
+
 }
 
 
