@@ -12,21 +12,21 @@
                 <div class="photo"> <img src="../svg/user-pp.svg" alt="user">    </div>
                 <div class="informations">
                 <h6 class="font-weight-bold">Quentin Robelin</h6>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
+                <p class="message-perso">Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
                 </div>
             </div>
             <div class="contact d-flex pl-1 pr-1">
                 <div class="photo"> <img src="../svg/user-pp.svg" alt="user">    </div>
                 <div class="informations">
                 <h6 class="font-weight-bold">Sergio Gomez</h6>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
+                <p class="message-perso">Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
                 </div>
             </div>
             <div class="contact d-flex pl-1 pr-1">
                 <div class="photo"> <img src="../svg/user-dev-pp.svg" alt="user">    </div>
                 <div class="informations">
                 <h6 class="font-weight-bold">Adrien Bouteiller</h6>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
+                <p class="message-perso">Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
                 </div>
             </div>
         </div>
@@ -61,11 +61,11 @@ export default {
 
 <style  scoped>
 #messagerie{
-    width: 500px;
+    width: 400px;
     height: auto;
     position: absolute;
     bottom: 0;
-    right: 8%;
+    right: 0;
 }
 .photo{
     flex-basis: 10%;
@@ -85,6 +85,10 @@ img{
     padding:  2% 1% 1% 1%;
     margin:  0 1%;
 }
+header{
+  padding-top:5px;
+  padding-bottom:5px ;
+}
 h5{
     margin: 0;
     padding: 1%;
@@ -93,8 +97,9 @@ h5{
 h6{
     margin-bottom: 1%;
 }
-p{
-    margin-bottom: 1%;
+.message-perso{
+  margin-bottom: 1%;
+  font-size: 0.75rem;
 }
 .arrow-toggle{
     width: 5%;
@@ -105,7 +110,7 @@ p{
 }
 
 .close-volet{
-  bottom:-200px !important;
+  bottom:-170px !important;
   transition: all 0.5s ease;
 }
 
