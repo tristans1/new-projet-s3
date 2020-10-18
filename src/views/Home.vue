@@ -1,9 +1,9 @@
 <template>
   <div class="home">
     <TheNavHome />
-    <!--<img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>-->
     <HomeConnect />
+    <MenuMobil class="d-block d-sm-none" />
+
   </div>
 </template>
 
@@ -11,12 +11,14 @@
 // @ is an alias to /src
 import TheNavHome from '@/components/layout/TheNavHome.vue'
 import HomeConnect from "@/components/HomeConnect.vue"
+import MenuMobil from "@/components/layout/MenuMobil";
 
 export default {
   name: 'Home',
   components: {
     TheNavHome, 
-    HomeConnect
+    HomeConnect,
+    MenuMobil
   },
   beforeCreate: function () {
     document.body.style.overflow = "hidden";

@@ -1,7 +1,7 @@
 <template>
-<!-- <div class="messagerie-open">-->
+
   <div id="messagerie" v-bind:class="[volet ? 'open-volet' : 'close-volet']">
-    <div class=" bg-white d-none d-md-block " >
+    <div class=" bg-white d-none d-sm-block " >
     <header class="bg-secondary d-flex" v-on:click="flipOpen">
         <h5 class="pl-2">Messagerie</h5>
         <img id="icon" class="ml-auto mr-3 arrow-toggle" src="../svg/arrow-toggle.svg" alt="arrow">
@@ -31,7 +31,6 @@
             </div>
         </div>
   </div>
-    <!--</div>-->
 </template>
 
 <script>

@@ -1,6 +1,8 @@
 <template>
   <div class="map">
-    <TheNavigation/>
+    <TheNavigation class="d-none d-sm-block"/>
+    <TheNavHome class="d-block d-sm-none"/>
+    <MenuMobil class= "d-block d-sm-none" style="z-index: 1"/>
 
     <GmapMap
         v-bind:center="{lat:47.837299, lng:2.353695}"
@@ -33,12 +35,16 @@
 // @ is an alias to /src
 import TheNavigation from '@/components/layout/TheNavigation.vue'
 import Messagerie from '@/components/layout/Messagerie.vue'
+import TheNavHome from '@/components/layout/TheNavHome.vue'
+import MenuMobil from "@/components/layout/MenuMobil";
 
 export default {
   name: 'Map',
   components: {
     TheNavigation,
-    Messagerie
+    TheNavHome,
+    Messagerie,
+    MenuMobil
   },
   mounted() {
     // At this point, the child GmapMap has been mounted, but
