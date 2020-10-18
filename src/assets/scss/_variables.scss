@@ -7,6 +7,9 @@
     font-family: 'Open Sans', sans-serif;
     
 }
+li{
+    list-style-type: none ;
+}
 
 h1 {
     font-family: 'Open Sans', sans-serif;
@@ -14,31 +17,6 @@ h1 {
     font-weight: bolder;
     color: white;
     margin-left: 0;
-}
-
-/*SM*/
-@media (max-width: 576px) {
-    h1 {
-        font-size: 2.75rem;
-
-    }
-}
-/*MD*/
-@media (min-width: 577px) and (max-width: 991px) {
-    h1{
-        font-size: 3rem;
-        width: 100%;
-        margin: 5% auto auto;
-
-    }
-}
-@media (min-width: 992px)  {
-    h1 {
-        font-size: 4.625rem;
-        width: 100%;
-
-    }
-
 }
 
 h5{
