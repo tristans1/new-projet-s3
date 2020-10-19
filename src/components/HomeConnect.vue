@@ -12,7 +12,7 @@
                        <router-link to="/map"> <button class="btn mb-3 text-white bg-primary">Se connecter avec ses identifiants</button></router-link> 
                 </div>
                     <div class="col-10 offset-1">
-                    <span class="m-3">ou </span>
+                    <span id="ou" class="m-3 text-">ou </span>
                     </div>
                 <div>
                      <router-link to="/map"><button class="btn bg-muted m-3 ">Continuer sans se connecter</button></router-link>
@@ -66,7 +66,7 @@ div.background{
 button{
     width: 80%;
     border: solid 1px ;
-    border-radius: 22px;
+
 }
 img{
     fill: white;
@@ -74,6 +74,10 @@ img{
 }
 span{
   text-decoration: underline white;
+  color: white;
+}
+span#ou{
+  color: #414141;
 }
 
 /*H1 responsive connnexion*/

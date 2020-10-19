@@ -36,7 +36,7 @@ export default {
   position: fixed;
   bottom: 0;
   width: 100%;
-  height: 54px; /*53px auto*/
+  height: 54px;
   background: #414141;
 }
 ul{
