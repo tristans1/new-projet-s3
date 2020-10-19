@@ -4,6 +4,7 @@
     <TheNavHome class="d-block d-sm-none" style="z-index: 1"/>
     <MenuMobil class="d-block d-sm-none" style="z-index: 1"/>
     <Searchbar style="z-index: 2"/>
+    <Space class="d-block d-sm-none" style="z-index: 1"/>
 
   </div>
 </template>
@@ -14,6 +15,7 @@ import TheNavHome from '@/components/layout/TheNavHome.vue'
 import TheNavigation from '@/components/layout/TheNavigation'
 import MenuMobil from '@/components/layout/MenuMobil'
 import Searchbar from "@/components/layout/Searchbar";
+import Space from "@/components/layout/Space";
 
 export default {
   name: 'Search',
@@ -21,7 +23,8 @@ export default {
     Searchbar,
     TheNavHome,
     TheNavigation,
-    MenuMobil
+    MenuMobil,
+    Space
   }
 }
 </script>

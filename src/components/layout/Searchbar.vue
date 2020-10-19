@@ -4,15 +4,15 @@
   <div id="searchbar">
 
     <div id="box-search" class="form-inline col-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3  pr-0">
-      <input name style="width: 90%" type="text"  v-model="search" placeholder="Rechercher un utilisateur" />
-      <img src="../svg/search-icon-red.svg" style="width: 20px" alt="" class="ml-3" />
+      <input name  type="text"  v-model="search" placeholder="Rechercher un utilisateur" />
+      <img src="../svg/search-icon-red.svg" style="width: 20px"  alt="" class="ml-auto mr-3" />
     </div>
   </div>
 
 
     <div class="col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-12  d-flex mt-3 bg-secondary " v-bind:key="user.id" v-for="user in filteredList">
       <div><img v-bind:src="user.img" alt="img-user" style="width: 80px " class="ml-1 mr-2"></div>
-      <div class="mt-auto mb-auto " style="text-align: left"><h5>{{ user.name }}</h5> <span> Promo {{ user.annee }}</span></div>
+      <div class="mt-auto mb-auto text-left "><h5>{{ user.name }}</h5> <span> Promo {{ user.annee }}</span></div>
       <div class="ml-auto mt-auto mb-auto"><button class="btn btn-primary text-white"> Voir</button></div>
     </div>
 
@@ -71,7 +71,7 @@ export default {
             5
         ),
         new User(
-            'Tristan Seclet',
+            'Jérémie Herzogh',
             'https://www.searchpng.com/wp-content/uploads/2019/02/Profile-ICon.png',
             2021,
             6
@@ -92,10 +92,7 @@ export default {
 
     };
   },
-  computed: {/*
-     filteredList() {
-       return this.list.filter(str => str.name.toLowerCase().includes(this.search.toLowerCase()));
-     }*/
+  computed: {
 
     filteredList() {
       return this.listUser.filter(user => {
@@ -121,7 +118,9 @@ input{
   border-radius: 20px;
 
 }
-
+input{
+  width: 80%;
+}
 input[type="text"]:focus {
   outline: none;
 }
