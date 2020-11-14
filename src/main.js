@@ -8,6 +8,8 @@ Vue.use(IconsPlugin)
 Vue.config.productionTip = false
 
 new Vue({
+ /* el:'#app',*/ /*rajouter apres jsp si a garder*/
   router,
-  render: h => h(App)
+  render: h => h(App),
+  template : '<App/>' /*rajouter apres jsp si a garder*/
 }).$mount('#app')

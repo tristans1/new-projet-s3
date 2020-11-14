@@ -5,7 +5,7 @@
     <MenuMobil class="d-block d-sm-none" style="z-index: 1"/>
     <MyProfil/>
     <MyProject />
-    <div style="position: absolute; left: 150px; width: 70px; bottom: 3%">
+    <div class="d-none d-md-block" style="position: absolute; left: 10px; width: 70px; bottom: 3%">
       <img class="mb-0" src="@/components/svg/mouse.svg" alt="mouse" style=" width: 70px;">
       <img class=" arrow mt-0" src="@/components/svg/arrow-toggle.svg" alt="arrow" style="width: 20px"><br/>
       <img class="arrow mt-0" src="@/components/svg/arrow-toggle.svg" alt="arrow" style="width: 20px">
