@@ -20,9 +20,16 @@ export default {
     HomeConnect,
     MenuMobil
   },
-  beforeCreate: function () {
-    document.body.style.overflow = "hidden";
-  }
+  /*beforeCreate: function () {
+    document.querySelector("#app").style.overflow = "hidden";
+  },*/
+  mounted() {
+    document.querySelector("#app").style.overflow = "hidden";
+  },
+  beforeRouteLeave(to, from, next) {
+    document.querySelector("#app").style.overflow = "auto";
+    next()
+  },
 }
 </script>
 
