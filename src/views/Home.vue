@@ -24,10 +24,10 @@ export default {
     document.querySelector("#app").style.overflow = "hidden";
   },*/
   mounted() {
-    document.querySelector("#app").style.overflow = "hidden";
+    document.body.style.overflow = "hidden";
   },
   beforeRouteLeave(to, from, next) {
-    document.querySelector("#app").style.overflow = "auto";
+    document.body.style.overflow = "auto";
     next()
   },
 }
