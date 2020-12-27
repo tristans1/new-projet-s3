@@ -9,9 +9,9 @@
 
 <script>
 // @ is an alias to /src
-import TheNavHome from '@/components/layout/TheNavHome.vue'
+import TheNavHome from '@/components/layout/menu/TheNavHome.vue'
 import HomeConnect from "@/components/HomeConnect.vue"
-import MenuMobil from "@/components/layout/MenuMobil";
+import MenuMobil from "@/components/layout/menu/MenuMobil";
 
 export default {
   name: 'Home',

@@ -22,12 +22,12 @@
 
 <script>
 // @ is an alias to /src
-import TheNavHome from '@/components/layout/TheNavHome.vue'
-import TheNavigation from '@/components/layout/TheNavigation'
-import MenuMobil from '@/components/layout/MenuMobil'
+import TheNavHome from '@/components/layout/menu/TheNavHome.vue'
+import TheNavigation from '@/components/layout/menu/TheNavigation'
+import MenuMobil from '@/components/layout/menu/MenuMobil'
 import MyProfil from "@/components/layout/MyProfil";
 import MyProject from "@/components/layout/MyProject";
-import Space from "@/components/layout/Space";
+import Space from "@/components/layout/menu/Space";
 
 export default {
   name: 'Profil',

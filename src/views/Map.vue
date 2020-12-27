@@ -1,8 +1,8 @@
 <template>
   <div class="map">
-    <TheNavigation class="d-none d-sm-block"/>
+    <TheNavigation class="d-none d-sm-block" style="z-index: 11"/>
     <TheNavHome class="d-block d-sm-none"/>
-    <MenuMobil class= "d-block d-sm-none" style="z-index: 1"/>
+    <MenuMobil class= "d-block d-sm-none" style="z-index: 10"/>
 
     <GmapMap
         v-bind:center="{lat:47.837299, lng:2.353695}"
@@ -33,10 +33,10 @@
 
 <script>
 // @ is an alias to /src
-import TheNavigation from '@/components/layout/TheNavigation.vue'
-import Messagerie from '@/components/layout/Messagerie.vue'
-import TheNavHome from '@/components/layout/TheNavHome.vue'
-import MenuMobil from "@/components/layout/MenuMobil";
+import TheNavigation from '@/components/layout/menu/TheNavigation.vue'
+import Messagerie from '@/components/layout/MessagerieRapide.vue'
+import TheNavHome from '@/components/layout/menu/TheNavHome.vue'
+import MenuMobil from "@/components/layout/menu/MenuMobil";
 
 export default {
   name: 'Map',

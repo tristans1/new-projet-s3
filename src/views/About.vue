@@ -7,7 +7,7 @@
 
 <script>
 // @ is an alias to /src
-import TheNavigation from '@/components/layout/TheNavigation.vue'
+import TheNavigation from '@/components/layout/menu/TheNavigation.vue'
 
 export default {
   name: 'About',

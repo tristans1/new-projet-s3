@@ -3,19 +3,19 @@
 
     <ul class="d-flex">
       <li class="m-auto">
-        <router-link  to="/search"><img src="../svg/search-icon.svg" alt="recherche" /></router-link>
+        <router-link  to="/search"><img src="../../svg/search-icon.svg" alt="recherche" /></router-link>
       </li>
       <li class="m-auto">
-        <router-link  to="/"><img src="../svg/paper-plane-icon.svg" alt="message" /></router-link>
+        <router-link  to="/message"><img src="../../svg/paper-plane-icon.svg" alt="message" /></router-link>
       </li>
       <li class="m-auto">
-        <router-link  to="/map"><img src="../svg/map-icon-2.svg" alt="carte" /></router-link>
+        <router-link  to="/map"><img src="../../svg/map-icon-2.svg" alt="carte" /></router-link>
       </li>
       <li class="m-auto">
-        <router-link  to="/profil"><img src="../svg/user-icon.svg" alt="profil" /></router-link>
+        <router-link  to="/profil"><img src="../../svg/user-icon.svg" alt="profil" /></router-link>
       </li>
       <li class="m-auto">
-        <router-link  to="/"><img src="../svg/settings-icon-3.svg" alt="paramètres" /></router-link>
+        <router-link  to="/"><img src="../../svg/settings-icon-3.svg" alt="paramètres" /></router-link>
       </li>
     </ul>
 
