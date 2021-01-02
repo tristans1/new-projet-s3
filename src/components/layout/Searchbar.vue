@@ -41,22 +41,7 @@
   </div>
 </template>
 
-<script>/*
-class User {
- constructor(name, img, annee, id, tri) {
-    this.name = name;
-    this.img = img;
-    this.annee = annee;
-    this.id = id;
-    this.tri = [
-      {
-        "promo": this.annee,
-        "nom" : this.name
-      }
-    ]
-  }
-}*/
-
+<script>
 
 export default {
   name: 'Searchbar',
@@ -70,131 +55,85 @@ export default {
       leTri: '',
       listUser: [
         {
-          "name": "Tristan Seclet",
+          "id": "0",
           "img": "https://www.searchpng.com/wp-content/uploads/2019/02/Profile-ICon.png",
-          "annee": 2021,
-          "id": 1,
+          "msg": "euh bah t\\'incrémentes jamais ton j, genre t\\'as jamais j++ si ? donc dans ce cas  ...",
+          "lieu": "Montbéliard",
+          "activite": 1,
+          "specialite": 1,
           "tri": {
             "nom": "Tristan Seclet",
             "promo": 2021
           }
         },
         {
-          "name": "Sergio Gomez",
+          "id": "1",
           "img": "https://www.searchpng.com/wp-content/uploads/2019/02/Profile-ICon.png",
-          "annee": 2021,
-          "id": 2,
+          "msg": "Bonjour je suis Jean",
+          "lieu": "Belfort",
+          "activite": 2,
+          "specialite": 3,
           "tri": {
-            "nom": "Sergio Gomez",
-            "promo": 2020
-
+            "nom": "Jean Dupont",
+            "promo": 2010
           }
         },
         {
-          "name": "Adrien Bouteiller",
+          "id": "2",
           "img": "https://www.searchpng.com/wp-content/uploads/2019/02/Profile-ICon.png",
-          "annee": 2021,
-          "id": 3,
+          "msg": "Bonjour je suis Adrien",
+          "lieu": "Lyon",
+          "activite": 1,
+          "specialite": 1,
           "tri": {
             "nom": "Adrien Bouteiller",
-            "promo": 2022
+            "promo": 2021
           }
         },
         {
-          "name": "Quentin Robelin",
+          "id": "3",
           "img": "https://www.searchpng.com/wp-content/uploads/2019/02/Profile-ICon.png",
-          "annee": 2020,
-          "id": 4,
+          "msg": "Bonjour je suis Sergio",
+          "lieu": "Valentigney",
+          "activite": 1,
+          "specialite": 4,
           "tri": {
-            "nom": "Quentin Robelin",
-            "promo": 2020
+            "nom": "Sergio Gomez",
+            "promo": 2021
           }
         },
         {
-          "name": "David Rivera",
+          "id": "4",
           "img": "https://www.searchpng.com/wp-content/uploads/2019/02/Profile-ICon.png",
-          "annee": 2020,
-          "id": 5,
+          "msg": "Bonjour je suis Lionel",
+          "lieu": "Paris",
+          "activite": 3,
+          "specialite": 3,
           "tri": {
-            "nom": 'David Rivera',
+            "nom": "Lionel Armand",
+            "promo": 2011
+          }
+        },
+        {
+          "id": "5",
+          "img": "https://www.searchpng.com/wp-content/uploads/2019/02/Profile-ICon.png",
+          "msg": "Bonjour je suis David",
+          "lieu": "Strasbourg",
+          "activite": 1,
+          "specialite": 3,
+          "tri": {
+            "nom": "David Rivera",
             "promo": 2022
-
           }
         }
-
       ],
-
-      /*listUser:[
-        new User(
-            'Tristan Seclet',
-            'https://www.searchpng.com/wp-content/uploads/2019/02/Profile-ICon.png',
-            2021,
-            1,
-            ""
-        ),
-        new User(
-            'Sergio Gomez',
-            'https://www.searchpng.com/wp-content/uploads/2019/02/Profile-ICon.png',
-            2021,
-            2,
-            ""
-        ),
-        new User(
-            'Quentin Robelin',
-            'https://www.searchpng.com/wp-content/uploads/2019/02/Profile-ICon.png',
-            2021,
-            3,
-            ""
-        ),
-        new User(
-            'Jean Dupont',
-            'https://www.searchpng.com/wp-content/uploads/2019/02/Profile-ICon.png',
-            2021,
-            4,
-            ""
-        ),
-        new User(
-            'David Rivera',
-            'https://www.searchpng.com/wp-content/uploads/2019/02/Profile-ICon.png',
-            2022,
-            5,
-            ""
-
-
-        ),
-        new User(
-            'Jérémie Herzogh',
-            'https://www.searchpng.com/wp-content/uploads/2019/02/Profile-ICon.png',
-            2021,
-            6,
-            ""
-        ),
-        new User(
-            'Adrien Bouteiller ',
-            'https://www.searchpng.com/wp-content/uploads/2019/02/Profile-ICon.png',
-            2021,
-            7,
-            ""
-        ),
-        new User(
-            'Steven Goffinet',
-            'https://www.searchpng.com/wp-content/uploads/2019/02/Profile-ICon.png',
-            2021,
-            8,
-            ""
-        ),
-      ],*/
-      /*sortKey: '',
-      sortSettings: [
-        {'nom': true},
-        {'promo': true}
-      ],
-      desc: false
-*/
     };
   },
 
-  methods: {
+
+
+
+methods: {
     flipOpen: function () {
       this.volet = !this.volet;
     },
@@ -227,7 +166,7 @@ export default {
 
     filteredList() {
       return this.listUser.filter(user => {
-        return user.name.toLowerCase().includes(this.search.toLowerCase())
+        return user.tri.nom.toLowerCase().includes(this.search.toLowerCase())
       })
     },
     mesTris(){
@@ -242,10 +181,10 @@ export default {
 <style scoped>
 #searchbar{
   box-shadow: 0 4px 10px -2px #555;
-  padding: 2%;
+  padding: 1.5%;
   position: fixed;
   width: 100%;
-  top: 10%;
+  top: 9%;
   z-index: 9;
   background: white;
 }
@@ -254,7 +193,7 @@ export default {
   border: 10px;
   border-radius: 10px;
   position: absolute;
-  top: 170px;
+  top: 20%;
   right: -20px;
   padding: 10px;
   padding-right: 3px;

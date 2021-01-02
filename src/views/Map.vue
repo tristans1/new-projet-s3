@@ -16,14 +16,15 @@
           scaleControl: false,
            }"
     >
-      <GmapMarker
-          v-bind:key="index"
-          v-for="(m, index) in markers"
-          v-bind:position="m.position"
-          v-bind:clickable="true"
-          :draggable="true"
-          @click="center=m.position"
-      />
+
+    <GmapMarker
+        v-bind:key="listUser.id"
+        v-for="(listUser) in listUser"
+        v-bind:position="listUser.position"
+        v-bind:clickable="true"
+        :draggable="false"
+        @click="center=listUser.position"
+    />
     </GmapMap>
 
     <Messagerie/>
@@ -46,6 +47,7 @@ export default {
     Messagerie,
     MenuMobil
   },
+
   mounted() {
     // At this point, the child GmapMap has been mounted, but
     // its map has not been initialized.
@@ -65,15 +67,112 @@ export default {
   },
   data() {
     return {
-      markers: [
-        {position: {lat: 48.837299, lng: 2.353695},},
-        {position: {lat: 47.495602, lng: 6.805290}},
-        {position: {lat: 45.739503, lng: 4.817517}},
-        {position: {lat: 47.223391, lng: -1.544413}},
-        {position: {lat: 48.682978, lng: 6.161145}},
-        {position: {lat: 47.357118, lng: 7.100343}}
+      listUser:
+          [
+            {
+              "id": "0",
+              "img": "https://www.searchpng.com/wp-content/uploads/2019/02/Profile-ICon.png",
+              "msg": "euh bah t\\'incrémentes jamais ton j, genre t\\'as jamais j++ si ? donc dans ce cas  ...",
+              "lieu": "Montbéliard",
+              "activite": "Étudiant",
+              "specialite": "Développement",
+              "bio": "Voici ma bio.  Lorem ipsum dolor sit amet, consetetur sadipscing elitr,",
+              "tri": {
+                "nom": "Tristan Seclet",
+                "promo": 2021
+              },
+              "position": {
+                "lat": 47.5167,
+                "lng": 6.8
+              }
+            },
+            {
+              "id": "1",
+              "img": "https://www.searchpng.com/wp-content/uploads/2019/02/Profile-ICon.png",
+              "msg": "Bonjour je suis Jean",
+              "lieu": "Belfort",
+              "activite": 2,
+              "specialite": 3,
+              "bio": " Lorem ipsum dolor sit amet, consetetur sadipscing elitr,",
+              "tri": {
+                "nom": "Jean Dupont",
+                "promo": 2010
+              },
+              "position": {
+                "lat": 47.6333,
+                "lng": 6.8667
+              }
+            },
+            {
+              "id": "2",
+              "img": "https://www.searchpng.com/wp-content/uploads/2019/02/Profile-ICon.png",
+              "msg": "Bonjour je suis Adrien",
+              "lieu": "Lyon",
+              "activite": 1,
+              "specialite": 1,
+              "bio": " Lorem ipsum dolor sit amet, consetetur sadipscing elitr,",
+              "tri": {
+                "nom": "Adrien Bouteiller",
+                "promo": 2021
+              },
+              "position": {
+                "lat": 45.75,
+                "lng": 4.85
+              }
+            },
+            {
+              "id": "3",
+              "img": "https://www.searchpng.com/wp-content/uploads/2019/02/Profile-ICon.png",
+              "msg": "Bonjour je suis Sergio",
+              "lieu": "Valentigney",
+              "activite": 1,
+              "specialite": 4,
+              "bio": " Lorem ipsum dolor sit amet, consetetur sadipscing elitr,",
+              "tri": {
+                "nom": "Sergio Gomez",
+                "promo": 2021
+              },
+              "position": {
+                "lat": 47.4667,
+                "lng": 6.8333
+              }
+            },
+            {
+              "id": "4",
+              "img": "https://www.searchpng.com/wp-content/uploads/2019/02/Profile-ICon.png",
+              "msg": "Bonjour je suis Lionel",
+              "lieu": "Paris",
+              "activite": 3,
+              "specialite": 3,
+              "bio": " Lorem ipsum dolor sit amet, consetetur sadipscing elitr,",
+              "tri": {
+                "nom": "Lionel Armand",
+                "promo": 2011
+              },
+              "position": {
+                "lat": 48.8534,
+                "lng": 2.3488
+              }
+            },
+            {
+              "id": "5",
+              "img": "https://www.searchpng.com/wp-content/uploads/2019/02/Profile-ICon.png",
+              "msg": "Bonjour je suis David",
+              "lieu": "Strasbourg",
+              "activite": 1,
+              "specialite": 3,
+              "bio": " Lorem ipsum dolor sit amet, consetetur sadipscing elitr,",
+              "tri": {
+                "nom": "David Rivera",
+                "promo": 2022
+              },
+              "position": {
+                "lat": 48.5833,
+                "lng": 7.75
+              },
+            }
+          ]
 
-      ]
     };
   }
 
