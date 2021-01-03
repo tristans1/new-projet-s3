@@ -16,15 +16,21 @@
           scaleControl: false,
            }"
     >
-
-    <GmapMarker
-        v-bind:key="listUser.id"
-        v-for="(listUser) in listUser"
-        v-bind:position="listUser.position"
-        v-bind:clickable="true"
-        :draggable="false"
-        @click="center=listUser.position"
-    />
+      <GmapMarker
+          :key="index"
+          v-for="(m, index) in listUser"
+          :position="m.position"
+          @click="toggleInfoWindow(m, index)"
+          :option="MarkerOptions"
+      />
+      <GmapInfoWindow
+          :options="infoOptions"
+          :position="infoWindowPos"
+          :opened="infoWinOpen"
+          @closeclick="infoWinOpen=false"
+      >
+        <div v-html="infoContent"></div>
+      </GmapInfoWindow>
     </GmapMap>
 
     <Messagerie/>
@@ -60,6 +66,61 @@ export default {
       document.body.style.overflow = "hidden";
 
   },
+  methods:{
+    toggleInfoWindow: function (marker, idx) {
+      this.infoWindowPos = marker.position;
+      this.infoContent = this.getInfoWindowContent(marker);
+
+      //check if its the same marker that was selected if yes toggle
+      if (this.currentMidx == idx) {
+        this.infoWinOpen = !this.infoWinOpen;
+      }
+      //if different marker set infowindow to open and reset current marker index
+      else {
+        this.infoWinOpen = true;
+        this.currentMidx = idx;
+      }
+    },
+    getInfoWindowContent: function (marker) {
+      return (
+          `<div class="mt-3">
+          <div>
+          <div class="d-flex align-items-center">
+             <img style="width: 30px" class="mr-2" src="${marker.img}" alt="${marker.tri.nom}">
+             <h4 class="ml-auto"> ${marker.tri.nom}</h4>
+          </div>
+
+          <div class="text-left">
+
+        <div class="m-2"><span style="font-weight: bold;">Lieu:  </span>
+          ${marker.lieu}
+          <br>
+        </div>
+
+        <div class="m-2"><span style="font-weight: bold;">Spécialité:  </span>
+          ${marker.specialite}
+          <br>
+        </div>
+
+        <div class="m-2"><span style="font-weight: bold;">Activité:  </span>
+          ${marker.activite}
+          <br>
+        </div>
+        <div class="m-2"><span style="font-weight: bold;">Promo:  </span>
+          ${marker.tri.promo}
+          <br>
+      </div>
+
+            <router-link class="align-self-end" to="/profil">
+            <button class="align-self-end mt-3 pl-5 pr-5 btn btn-primary ml-auto mr-auto mb-3">Voir le profil</button>
+              </router-link>
+
+        </div>
+                  </div>
+        </div>`);
+    },
+
+  },
 
   beforeRouteLeave(to, from, next) {
     document.body.style.overflow = "auto";
@@ -67,7 +128,36 @@ export default {
   },
   data() {
     return {
-      listUser:
+      map: null,
+      infoContent: '',
+      infoWindowPos: {
+        lat: 0,
+        lng: 0
+      },
+      infoWinOpen: false,
+      currentMidx: null,
+      fullscreenControl: false,
+      infoOptions: {
+        pixelOffset: {
+          width: 0,
+          height: -35
+        }
+      },
+      MarkerOptions: {
+        zIndex: 999999,
+        opacity: 0.2
+
+      },
+
+
+
+
+
+
+
+/*      markers : this.marker*/
+          listUser:
+          // eslint-disable-next-line no-unexpected-multiline
           [
             {
               "id": "0",
@@ -91,8 +181,8 @@ export default {
               "img": "https://www.searchpng.com/wp-content/uploads/2019/02/Profile-ICon.png",
               "msg": "Bonjour je suis Jean",
               "lieu": "Belfort",
-              "activite": 2,
-              "specialite": 3,
+              "activite": "Communication",
+              "specialite": "Étudiant",
               "bio": " Lorem ipsum dolor sit amet, consetetur sadipscing elitr,",
               "tri": {
                 "nom": "Jean Dupont",
@@ -108,8 +198,8 @@ export default {
               "img": "https://www.searchpng.com/wp-content/uploads/2019/02/Profile-ICon.png",
               "msg": "Bonjour je suis Adrien",
               "lieu": "Lyon",
-              "activite": 1,
-              "specialite": 1,
+              "activite": "Freelance",
+              "specialite": "Développpement",
               "bio": " Lorem ipsum dolor sit amet, consetetur sadipscing elitr,",
               "tri": {
                 "nom": "Adrien Bouteiller",
@@ -125,8 +215,8 @@ export default {
               "img": "https://www.searchpng.com/wp-content/uploads/2019/02/Profile-ICon.png",
               "msg": "Bonjour je suis Sergio",
               "lieu": "Valentigney",
-              "activite": 1,
-              "specialite": 4,
+              "activite": "Étudiant",
+              "specialite": "Graphisme / Design",
               "bio": " Lorem ipsum dolor sit amet, consetetur sadipscing elitr,",
               "tri": {
                 "nom": "Sergio Gomez",
@@ -142,8 +232,8 @@ export default {
               "img": "https://www.searchpng.com/wp-content/uploads/2019/02/Profile-ICon.png",
               "msg": "Bonjour je suis Lionel",
               "lieu": "Paris",
-              "activite": 3,
-              "specialite": 3,
+              "activite": "Employé",
+              "specialite": "Audiovisuel",
               "bio": " Lorem ipsum dolor sit amet, consetetur sadipscing elitr,",
               "tri": {
                 "nom": "Lionel Armand",
@@ -159,8 +249,8 @@ export default {
               "img": "https://www.searchpng.com/wp-content/uploads/2019/02/Profile-ICon.png",
               "msg": "Bonjour je suis David",
               "lieu": "Strasbourg",
-              "activite": 1,
-              "specialite": 3,
+              "activite": "Étudiant",
+              "specialite": "Communication",
               "bio": " Lorem ipsum dolor sit amet, consetetur sadipscing elitr,",
               "tri": {
                 "nom": "David Rivera",
@@ -174,7 +264,8 @@ export default {
           ]
 
     };
-  }
+  },
+
 
 }
 
