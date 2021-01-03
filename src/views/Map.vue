@@ -7,7 +7,7 @@
     <GmapMap
         v-bind:center="{lat:47.837299, lng:2.353695}"
         :zoom="7"
-        map-type-id="terrain"
+        map-type-id="roadmap"
         style="width: 100%; height: 90vh;"
         ref="mapRef"
         :options="{
