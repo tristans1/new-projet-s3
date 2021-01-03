@@ -47,11 +47,11 @@
 
 
     <b-form-group class="mt-3 text-left" id="input-group-4" label="Biographie :" label-for="input-4" type="textarea">
-      <b-form-input
+      <b-form-textarea style="height: 200px"
           id="input-4"
           :placeholder="listUser[0].bio"
 
-      ></b-form-input>
+      ></b-form-textarea>
     </b-form-group>
 
           <b-button class="m-3" type="submit" variant="primary">Valider</b-button>
