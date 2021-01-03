@@ -15,10 +15,10 @@
       <div id="params" v-bind:class="[volet ? 'open-volet' : 'close-volet']">
         <ul class="text-left ml-4 mt-4">
           <h6 class="text-white font-weight-bold mb-4">Paramètres</h6>
-          <li class="mb-4"><a class="text-white" href="">
+          <li class="mb-4"><router-link class="text-white" to="/cookies">
             <img  class="mr-2" style="width: 20px" src="../../svg/params/lock-solid.svg" alt="">
             Confidentialité
-            <img  class="arrow-w" style="width: 20px" src="../../svg/white-arrow.svg" alt=""></a></li>
+            <img  class="arrow-w" style="width: 20px" src="../../svg/white-arrow.svg" alt=""></router-link></li>
           <li class="mb-4"><a class="text-white" href="">
               <img  class="mr-2" style="width: 20px" src="../../svg/params/shield-svgrepo-com.svg" alt="">
             Sécurité
@@ -35,13 +35,23 @@
             <img  class="mr-2" style="width: 20px" src="../../svg/params/help-web-button-svgrepo-com.svg" alt="">
             Aide
             <img  class="arrow-w" style="width: 20px" src="../../svg/white-arrow.svg" alt=""></a></li>
-          <li class="mb-4"><a class="text-white" href="">
+          <li class="mb-4"><router-link class="text-white" to="/cgu">
             <img  class="mr-2" style="width: 20px" src="../../svg/params/information-help-svgrepo-com.svg" alt="">
-            À propos
-            <img  class="arrow-w" style="width: 20px" src="../../svg/white-arrow.svg" alt=""></a></li>
+            Conditions d'utilisations
+            <img  class="arrow-w" style="width: 20px" src="../../svg/white-arrow.svg" alt=""></router-link></li>
+          <li class="mb-4">
+            <router-link class="text-white" to="/mentions">
+              <img class="mr-2" style="width: 20px" src="../../svg/params/information-help-svgrepo-com.svg" alt="">
+              Mentions légales
+              <img class="arrow-w" style="width: 20px" src="../../svg/white-arrow.svg" alt=""></router-link>
+          </li>
 
 
         </ul>
+
+        <router-link to="/">
+          <button id="deconnexion" class="btn-primary">Déconnexion</button>
+        </router-link>
       </div>
     </div>
 
@@ -71,6 +81,12 @@ export default {
 </script>
 
 <style scoped>
+#deconnexion{
+  position: relative;
+  top: 250px;
+  border-radius: 20px;
+  border:10px solid #e62450;
+}
 #params{
   position: absolute;
   bottom: 0;
@@ -81,13 +97,15 @@ export default {
   height: 100vh;
 }
 .open-volet {
+  display: block;
   right: 0;
   transition: all 0.5s ease;
   overflow: hidden;
 }
 
 .close-volet {
-  overflow: auto;
+  display: block;
+  overflow: hidden;
   right: -300px !important;
   transition: all 0.5s ease;
 }
