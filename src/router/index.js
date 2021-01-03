@@ -61,10 +61,46 @@ const routes = [
     name: 'Profil',
     component: () => import(/* webpackChunkName: "about" */ '../views/Profil.vue')
   },
+
+  {
+    path: '/profiluser',
+    name: 'PageProfil',
+    component: () => import(/* webpackChunkName: "about" */ '../views/PageProfil')
+  },
   {
     path: '/message',
     name: 'Message',
     component: () => import(/* webpackChunkName: "about" */ '../views/Message.vue')
+  },
+  {
+    path: '/cgu',
+    name: 'CGU',
+    component: () => import(/* webpackChunkName: "about" */ '../components/layout/paramètres/CGU.vue')
+  },
+  {
+    path: '/cookies',
+    name: 'Cookies',
+    component: () => import(/* webpackChunkName: "about" */ '../components/layout/paramètres/Cookies.vue')
+  },
+  {
+    path: '/mentions',
+    name: 'MentionsLegales',
+    component: () => import(/* webpackChunkName: "about" */ '../components/layout/paramètres/MentionsLegales.vue')
+  },
+  {
+    path: '/modify',
+    name: 'ModifiedProfil',
+    component: () => import(/* webpackChunkName: "about" */ '../views/ModifiedProfil.vue')
+  },
+  {
+    path: '/messmobile',
+    name: 'LeMessage',
+    component: () => import(/* webpackChunkName: "about" */ '../views/LeMessage.vue')
+  },
+  {
+    path: '/addprojet',
+    name: 'AddProjet',
+    component: () => import(/* webpackChunkName: "about" */ '../views/AddProjet.vue')
   }
 
 
