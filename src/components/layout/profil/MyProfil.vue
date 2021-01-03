@@ -26,6 +26,7 @@
 
     <MyProject/>
     <MonParcours/>
+    <Space class="d-block d-sm-none"/>
 
   </div>
 </template>
@@ -33,6 +34,7 @@
 <script>
 import MyProject from "@/components/layout/profil/MyProject";
 import MonParcours from "@/components/layout/profil/MonParcours";
+import Space from "@/components/layout/menu/Space";
 export default {
   name: 'MyProfil',
   props: {
@@ -40,7 +42,8 @@ export default {
   },
   components : {
     MyProject,
-    MonParcours
+    MonParcours,
+    Space
   },
   data(){
     return{
@@ -174,16 +177,7 @@ export default {
 </script>
 
 <style scoped>
-#parcours{
-  margin-top: 5%;
-}
-.imgparcours{
-  box-shadow: 5px 5px 0px #e62450;
-  margin-left: 10px;
-  margin-right: 20px;
-  width: 84px;
-  height: 84px;
-}
+
 p>span{
   font-weight: lighter;
 }
@@ -202,8 +196,6 @@ button #icon{
   h2{
     position: absolute;
     font-size: 1.6rem;
-    /*left: 125px;*/
-    /*top:15px;*/
     top: 2%;
     left: 25%;
 
