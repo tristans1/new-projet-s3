@@ -50,8 +50,24 @@ const routes = [
     path:'/map',
     name :'Map', 
     component: () => import(/* webpackChunkName: "about" */ '../views/Map.vue')
+  },
+  {
+    path: '/search',
+    name: 'Search',
+    component: () => import(/* webpackChunkName: "about" */ '../views/Search.vue')
+  },
+  {
+    path: '/profil',
+    name: 'Profil',
+    component: () => import(/* webpackChunkName: "about" */ '../views/Profil.vue')
+  },
+  {
+    path: '/message',
+    name: 'Message',
+    component: () => import(/* webpackChunkName: "about" */ '../views/Message.vue')
   }
-  
+
+
 ]
 
 const router = new VueRouter({

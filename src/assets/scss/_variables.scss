@@ -5,8 +5,19 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Open Sans', sans-serif;
-    
+    color: #414141;
 }
+li{
+    list-style: none ;
+}
+a, a:hover{
+    text-decoration: none;
+}
+
+body{
+  overflow-x: hidden;
+}
+
 
 h1 {
     font-family: 'Open Sans', sans-serif;
@@ -15,34 +26,15 @@ h1 {
     color: white;
     margin-left: 0;
 }
-
-/*SM*/
-@media (max-width: 576px) {
-    h1 {
-        font-size: 2.75rem;
-
-    }
+h2{
+    font-size: 1.6rem;
+    color: #414141;
 }
-/*MD*/
-@media (min-width: 577px) and (max-width: 991px) {
-    h1{
-        font-size: 3rem;
-        width: 100%;
-        margin: 5% auto auto;
-
-    }
-}
-@media (min-width: 992px)  {
-    h1 {
-        font-size: 4.625rem;
-        width: 100%;
-
-    }
-
-}
-
 h5{
     font-size: 1.25rem;
     color: #707070;
     font-weight: 600;
+}
+.btn{
+    border-radius:16px;
 }

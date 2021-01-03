@@ -12,7 +12,7 @@
                        <router-link to="/map"> <button class="btn mb-3 text-white bg-primary">Se connecter avec ses identifiants</button></router-link> 
                 </div>
                     <div class="col-10 offset-1">
-                    <span class="m-3">ou </span>
+                    <span id="ou" class="m-3 text-">ou </span>
                     </div>
                 <div>
                      <router-link to="/map"><button class="btn bg-muted m-3 ">Continuer sans se connecter</button></router-link>
@@ -40,12 +40,23 @@ export default {
 </script>
 <style lang="scss" scoped>
 div.background{
-    background: url("../assets/home_connect_1.png") 50% 50%;
+    background: url("../assets/background/home_connect_1.png") 50% 50%;
     background-size: cover;
     width: 100%;
     height: 100vh;
     padding-top: 12%;
 }
+
+@media (max-width: 576px) {
+  div.background {
+    background: url("../assets/background/home_connect_mobile.png") 50% 50%;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+  }
+
+  }
+
 #contain{
     border: solid #EBEBEB 5px;
     border-radius: 20px;
@@ -55,7 +66,7 @@ div.background{
 button{
     width: 80%;
     border: solid 1px ;
-    border-radius: 22px;
+
 }
 img{
     fill: white;
@@ -63,6 +74,41 @@ img{
 }
 span{
   text-decoration: underline white;
+  color: white;
+}
+span#ou{
+  color: #414141;
+}
+
+/*H1 responsive connnexion*/
+/*SM*/
+@media (max-width: 576px) {
+  h1 {
+    font-size: 2.75rem;
+    width: 100%;
+    margin: 5% auto auto;
+
+
+  }
+}
+
+/*MD*/
+@media (min-width: 577px) and (max-width: 991px) {
+  h1 {
+    font-size: 3rem;
+    width: 100%;
+    margin: 5% auto auto;
+
+  }
+}
+
+@media (min-width: 992px) {
+  h1 {
+    font-size: 4.625rem;
+    width: 100%;
+
+  }
+
 }
 
 </style>

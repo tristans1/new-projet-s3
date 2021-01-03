@@ -1,8 +1,8 @@
 <template>
-<!-- <div class="messagerie-open">-->
+
   <div id="messagerie" v-bind:class="[volet ? 'open-volet' : 'close-volet']">
-    <div class=" bg-white d-none d-md-block " >
-    <header class="bg-secondary d-flex" v-on:click="flipOpen">
+    <div class=" bg-white d-none d-sm-block " >
+    <header class="d-flex" v-on:click="flipOpen">
         <h5 class="pl-2">Messagerie</h5>
         <img id="icon" class="ml-auto mr-3 arrow-toggle" src="../svg/arrow-toggle.svg" alt="arrow">
 
@@ -31,7 +31,6 @@
             </div>
         </div>
   </div>
-    <!--</div>-->
 </template>
 
 <script>
@@ -61,16 +60,17 @@ export default {
 
 <style  scoped>
 #messagerie{
+  border: 10px solid white;
+  border-radius: 16px;
     width: 400px;
     height: auto;
     position: absolute;
-    bottom: 0;
+    bottom: -8px; /*ou 0*/
     right: 0;
 }
 .photo{
     flex-basis: 10%;
-    margin: 0;
-    margin-right: 1%;
+    margin: 0 1% 0 0;
 }
 .informations{
     flex-basis: 89%;
@@ -81,13 +81,13 @@ img{
     max-width: 100%;
 }
 .contact{
-    border-bottom: 1px solid #707070;
+    border-bottom: 1px solid #EBEBEB;
     padding:  2% 1% 1% 1%;
     margin:  0 1%;
 }
 header{
-  padding-top:5px;
   padding-bottom:5px ;
+  border-bottom: 2px solid #EBEBEb;
 }
 h5{
     margin: 0;
@@ -110,7 +110,7 @@ h6{
 }
 
 .close-volet{
-  bottom:-170px !important;
+  bottom:-178px !important;
   transition: all 0.5s ease;
 }
 

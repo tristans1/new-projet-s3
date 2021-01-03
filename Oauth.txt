@@ -1,0 +1,59 @@
+Lien 1
+
+https://linkedin.com/uas/oauth2/authorization?response_type=code&state=987654321&scope=r_liteprofile%20r_emailaddress%20w_member_social&client_id=77ye5mwpgp7ndd&redirect_uri=https%3A%2F%2Ftristanseclet.com%2Falummi%2Fmap
+
+Lien 2
+
+https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=77ye5mwpgp7ndd&redirect_uri=https%3A%2F%2Ftristanseclet.com%2Falummi%2Fmap&state=fooobar&scope=r_liteprofile%20r_emailaddress%20w_member_social
+
+
+
+///
+
+URI:
+https%3A%2F%2Ftristanseclet.com%2Falummi%2Fmap
+
+
+Code 1 = AQQHz404eIvBLWqCWVIfSJHEayJ2HCOEZ74-u9zrwUwYYvCLPQkuYTMLDy9Crf0Lfbz3qY9AcO95lmB1MwS3tYRCD9Oj9WKmrl-ehcE2Ah2BbbAVD3N3aI5RU8xmvd_h5D9X3r0948AeaPRlLNaCK6zfR3GI10zwceYi5gOi-8Mr6geNU1fV9Q6ZdXZGqA
+
+Code 2 = AQRV3k4iVQOjAzYTo7LS1dlEAtTmGSL2q3zGxpcAa-znldhHRXHNuMXn0_oltW9abtnGZfFe1pJuGgoNDObVRMZp6g91tjPc4U9J6DfuwI7O02UiKH832m8_2LD9ufuz7qqz-v02iYzMwOLZ3FpeuytVQUfyukooZgJICkAljGuo1WT6dmqMvYhAhew-0g
+
+
+
+
+
+
+
+33333: AQTowL_tqxCfmPgDVP0iSGNY5jbCObTqogeQfAYMgz0o-LLhF2YMJnVB9JRRegtCRWpgzZLDTt3Ml_sVwjwC6POuYmkux_fGqD2IyZbSrrSFloZykVrJBOECB4lULul8_yl6xhW4FOtvBolTfZz_A5fjiNeapSRStpz4aVl513VQN3Jd-4Ks6T249Q7o4A
+
+
+clientId= 77ye5mwpgp7ndd
+clientSecret = h9Hewn6QZw64Z4PS
+
+Access token du code 1 : AQWcsAYl3Auh2f0Os0N1_DXUbeRWOORakKpbhMlF8wDKl_qcfIUEyRBTlCCRDKYHMOZC0MkN3_gfkfDOouAkWCldeqOkHd7mgm-3JFyx0y1g1HyyaxEuBsY2FMUP4SMU1JrgjZ-JLkHpepu7FHl1qhWGLNupJSU6e8v0qmGTQ5wXMW-rZqEVT42957VWVYC13jf1zFRzKOWoJYTFj5WJW09akk5hQBAjrrHfhZf4MFokV_nemGJPQV0cpuwvOvBDfqxuHd53TRkcyJncVtmGvVuy2cynXbTOdgzmp804J-etYn0TKlVXF7tNhE-lWj-6asSiGSsr5sU9Xq6O-XUZgpo1FB3rKw
+
+
+curl -ik -X POST https://www.linkedin.com/oauth/v2/accessToken \
+-d grant_type=authorization_code \
+-d code=AQTowL_tqxCfmPgDVP0iSGNY5jbCObTqogeQfAYMgz0o-LLhF2YMJnVB9JRRegtCRWpgzZLDTt3Ml_sVwjwC6POuYmkux_fGqD2IyZbSrrSFloZykVrJBOECB4lULul8_yl6xhW4FOtvBolTfZz_A5fjiNeapSRStpz4aVl513VQN3Jd-4Ks6T249Q7o4A  \
+-d redirect_uri=https%3A%2F%2Ftristanseclet.com%2Falummi%2Fmap \
+-d client_id=77ye5mwpgp7ndd \
+-d client_secret=h9Hewn6QZw64Z4PS
+
+
+2eme curl accès a tout
+https://api.linkedin.com/v2/me
+
+
+curl https://api.linkedin.com/v2/me -H  "AQVs96iOtUdMIWHNhvrhyM_-QvZcFRw1jojI6Pjz55_WT2NdmA0G8AlUejssa8JFhGT7ND0VHiL_Em1WSzdrcLl4UvkMhrXQnElJHdygAD2GSuraZT50L2j2ci5exV7nma_UIj19mOvrdwxbZF5jd8-4U7CGCyjwQssNXb7OOKn0clBl0m97K9ACceuTOvEJaDbULkgPHAcfkIDEy1Evlu3Phua_sR86vEM6Z_oqhmxh3bpxXqlsf68JYCS0buxwbtM64saKU9If-nEd9uYHc7njFDQqxbLRPO5czVKZ9LDeoTPoXzR0KGcz7Lz7pVZLQtaWvapYz4GeBbvzV0L4CdRg3ytlLw"
+
+
+curl -H 'Authorization: Bearer  curl https://api.linkedin.com/v2/me -H  "AQVs96iOtUdMIWHNhvrhyM_-QvZcFRw1jojI6Pjz55_WT2NdmA0G8AlUejssa8JFhGT7ND0VHiL_Em1WSzdrcLl4UvkMhrXQnElJHdygAD2GSuraZT50L2j2ci5exV7nma_UIj19mOvrdwxbZF5jd8-4U7CGCyjwQssNXb7OOKn0clBl0m97K9ACceuTOvEJaDbULkgPHAcfkIDEy1Evlu3Phua_sR86vEM6Z_oqhmxh3bpxXqlsf68JYCS0buxwbtM64saKU9If-nEd9uYHc7njFDQqxbLRPO5czVKZ9LDeoTPoXzR0KGcz7Lz7pVZLQtaWvapYz4GeBbvzV0L4CdRg3ytlLw"' \
+'https://api.linkedin.com/v2/me
+
+
+
+localisedFirstName
+localisedLastName
+pictureProfile
+
