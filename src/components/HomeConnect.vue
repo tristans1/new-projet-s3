@@ -6,7 +6,7 @@
             <div id="contain" class="col-10 offset-1 col-md-6 offset-md-3 col-lg-4 offset-lg-3 bg-white pb-3 pt-3"> <!-- w-sm-75 m-auto  w-md-25-->
                 
                 <div > <!-- class="col-12"-->
-                        <router-link to="/map"> <button class="btn m-3 text-white bg-primary"> <!--<img class="img-fluid" src="../assets/svg/linkedin.svg" alt="linkedin">--> Se connecter via Linkedin</button></router-link>
+                        <a href="https://linkedin.com/uas/oauth2/authorization?response_type=code&state=987654321&scope=r_liteprofile%20r_emailaddress&client_id=77ye5mwpgp7ndd&redirect_uri=https%3A%2F%2Ftristanseclet.com%2Falummi%2Fmap"><button class="btn m-3 text-white bg-primary"> <!--<img class="img-fluid" src="../assets/svg/linkedin.svg" alt="linkedin">--> Se connecter via Linkedin</button></a>
                 </div>
                 <div >
                        <router-link to="/map"> <button class="btn mb-3 text-white bg-primary">Se connecter avec ses identifiants</button></router-link> 
