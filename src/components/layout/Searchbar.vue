@@ -9,11 +9,16 @@
   </div>
 
 
-    <div id="User" class="col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-12  d-flex mt-3 bg-secondary
-      " v-bind:key="user.id" v-for="user in filteredList">
+    <div id="user" class="col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-12  d-flex mt-3 bg-secondary
+      " v-bind:key="index" v-for="(user, index) in filteredList">
       <div><img v-bind:src="user.img" :alt="user.name" style="width: 80px " class="ml-1 mr-2"></div>
       <div class="mt-auto mb-auto text-left "><h5>{{ user.tri.nom }}</h5> <span> Promo {{ user.tri.promo }}</span></div>
-      <div class="ml-auto mt-auto mb-auto"><button class="btn btn-primary text-white"> Voir</button></div>
+      <div class="ml-auto mt-auto mb-auto">
+
+        <router-link to="/profiluser">
+        <button  class="btn btn-primary text-white"> Voir</button>
+        </router-link>
+      </div>
     </div>
 
     <div class="filters" v-bind:class="[volet ? 'open-volet' : 'close-volet']">
@@ -38,6 +43,8 @@
 
       </div>
     </div>
+
+
   </div>
 </template>
 
@@ -57,7 +64,7 @@ export default {
         {
           "id": "0",
           "img": "https://www.searchpng.com/wp-content/uploads/2019/02/Profile-ICon.png",
-          "msg": "euh bah t\\'incrémentes jamais ton j, genre t\\'as jamais j++ si ? donc dans ce cas  ...",
+          "msg": "euh bah t'incrémentes jamais ton j, genre t'as jamais j++ si ? donc dans ce cas  ...",
           "lieu": "Montbéliard",
           "activite": 1,
           "specialite": 1,
@@ -134,6 +141,7 @@ export default {
 
 
 methods: {
+
     flipOpen: function () {
       this.volet = !this.volet;
     },
@@ -206,7 +214,7 @@ methods: {
 .filters{
   padding-top: 200px;
   width: 300px;
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
   bottom: 0;
@@ -277,13 +285,18 @@ input[type="text"]:focus {
 #SearchComponent{
   margin-top: 8%;
 }
-/*#User{
-  border-radius: 16px;
-  border: #EBEBEB solid 10px;
-}*/
+
 @media screen and (max-width: 690px){
   #SearchComponent{
     margin-top: 15%;
+  }
+}
+
+@media (min-width: 1300px) and (max-width: 1920px) {
+  #searchbar {
+
+    top: 8%;
+
   }
 }
 </style>
